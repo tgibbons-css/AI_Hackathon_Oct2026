@@ -6,8 +6,11 @@
   "scripts": {
     "dev": "vite --host 127.0.0.1",
     "build": "tsc -b && vite build",
+    "build:pages": "tsc -b && vite build --mode github-pages",
+    "test": "node --experimental-strip-types --test --test-isolation=none tests/breathing-timing.test.mjs tests/journal-state.test.mjs tests/support-filters.test.mjs",
     "typecheck": "tsc -b",
-    "preview": "vite preview --host 127.0.0.1"
+    "preview": "vite preview --host 127.0.0.1",
+    "preview:pages": "vite preview --host 127.0.0.1 --mode github-pages"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",

@@ -17,7 +17,12 @@ export function AppLayout() {
     window.scrollTo(0, 0)
   }, [pathname])
   return <div className="app-shell">
-    <a className="skip-link" href="#main-content">Skip to content</a>
+    <a className="skip-link" href="#main-content" onClick={event => {
+      // Keep this anchor from changing the hash-based Pages route.
+      event.preventDefault()
+      mainRef.current?.focus({ preventScroll: true })
+      mainRef.current?.scrollIntoView({ block: 'start' })
+    }}>Skip to content</a>
     <header className="site-header">
       <Container maxWidth="lg" className="header-inner">
         <Link className="brand" to="/" aria-label="Steady Steps home"><span className="brand-mark"><SpaOutlined /></span><span>Steady Steps</span></Link>

@@ -35,4 +35,24 @@ node --experimental-strip-types --test --test-isolation=none tests/support-filte
 
 Interactions use React state and reset on refresh. The application uses no browser persistence, remote fonts, external assets, API calls, authentication, analytics, databases, or telemetry. Opening the help dialog does not contact anyone. Vite’s local development connection supports hot reload; the application sends no user information to a server.
 
-For production hosting, configure an SPA fallback to `index.html` so direct links to routes load correctly. Vite handles this locally.
+## GitHub Pages demo
+
+The repository is https://github.com/tgibbons-css/AI_Hackathon_Oct2026.
+
+In the repository’s **Settings → Pages**, select **GitHub Actions** as the build and deployment source. The `Deploy Steady Steps to GitHub Pages` workflow tests and publishes the app on pushes to `main`; it can also be run manually from the Actions tab.
+
+Once deployment succeeds, open https://tgibbons-css.github.io/AI_Hackathon_Oct2026/.
+
+The Pages build uses hash-based routes, such as `/#/calm`, `/#/reflect`, and `/#/support`, to support direct links and refreshes on static hosting. Local development still uses `/calm`, `/reflect`, and `/support`. The skip-to-content link works with both routing modes.
+
+To check the Pages build locally:
+
+```sh
+npm test
+npm run build:pages
+npm run preview:pages
+```
+
+Open http://127.0.0.1:4173/AI_Hackathon_Oct2026/ in the preview server. Use Node 24 for the deployment workflow and tests. `npm run build` remains available for hosts with an SPA fallback to `index.html`.
+
+The app does not add analytics or transmit journal entries. Hosting providers may keep their own access logs; GitHub Pages documents security logging of visitor IP addresses at https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages.
