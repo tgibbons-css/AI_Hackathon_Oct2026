@@ -1,0 +1,27 @@
+.calm-page { max-width: 850px; margin: 0 auto; padding-bottom: 70px; }
+.breathing-panel.MuiPaper-root { margin-top: 30px; padding: 24px 36px 30px; border-color: #DFE6DF; background: linear-gradient(150deg, #FFFFFF, #F5F8F2); }
+.breathing-panel:focus { outline: none; }
+.breathing-circle-space { height: 292px; display: grid; place-items: center; position: relative; }
+.breathing-guide { position: absolute; width: 262px; height: 262px; border: 1px solid #D6E4DB; border-radius: 50%; }
+.breathing-circle { width: 246px; height: 246px; border-radius: 50%; display: grid; place-items: center; color: #3C7470; background: radial-gradient(circle at 40% 30%, #E0EEE5, #AFCFC1); box-shadow: 0 0 0 10px #DBE9E144, 0 12px 36px #5B8D7510; will-change: transform; }
+.breathing-circle.motion-reduced { will-change: auto; }
+.breathing-prompt { min-height: 96px; text-align: center; }
+.breathing-progress { max-width: 550px; margin: 12px auto 30px; }
+.breathing-time { display: flex; justify-content: space-between; font-size: .8rem; color: #59666B; margin-bottom: 10px; font-variant-numeric: tabular-nums; }
+.breathing-controls { max-width: 600px; margin: auto; }
+.breathing-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.breathing-actions .MuiButton-root { flex: 1; white-space: nowrap; }
+.breathing-end-dock { position: fixed; bottom: max(16px, env(safe-area-inset-bottom)); right: max(16px, env(safe-area-inset-right)); z-index: 1100; padding: 6px; border-radius: 16px; background: #FAF8F4; box-shadow: 0 3px 18px #343C4320; }
+.breathing-safety { margin-top: 22px; }
+.breathing-result { padding: 24px 0; text-align: center; }
+.breathing-result-icon { display: grid; place-items: center; width: 90px; height: 90px; background: #E1ECE5; color: #427F7E; border-radius: 50%; margin: 0 auto 26px; }
+.breathing-result h2:focus { outline: none; }
+.breathing-next-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 32px; }
+@media (max-width: 600px) {
+  .breathing-panel.MuiPaper-root { padding: 18px 18px 24px; }
+  .breathing-circle-space { height: 266px; }
+  .breathing-guide { width: 230px; height: 230px; }
+  .breathing-circle { width: 216px; height: 216px; }
+  .breathing-prompt { min-height: 108px; }
+  .breathing-next-actions { flex-direction: column; }
+}
